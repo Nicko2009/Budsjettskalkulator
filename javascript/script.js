@@ -1,14 +1,13 @@
-const intekter = document.getElementById("inntekter");
-const intekterBelop = document.getElementById("IntekterBelop");
+const inntekt = document.getElementById("inntekt");
+const inntektBelop = document.getElementById("IntekterBelop");
 const leggTilInntekt = document.getElementById("leggTilInntekt");
 
-const utgift = document.getElementById("utgifter");
+const utgift = document.getElementById("utgift");
 const utgiftBelop = document.getElementById("UtgifterBelop");
 const leggTilUtgift = document.getElementById("leggTilUtgift");
 
-const innekter = document.getElementById("inntekter");
+const inntekter = document.getElementById("inntekter");
 const utgifter = document.getElementById("utgifter");
-
 
 const saldo = document.getElementById("saldo");
 
@@ -17,13 +16,12 @@ let totalUtgifter = 0;
 let totalSaldo = 0;
 
 leggTilInntekt.addEventListener("click", function() {
-    
-    const navn = intekter.value;
-     const belop = intekterBelop.value;
-     const nyInntekt = document.createElement("li");
+    const navn = inntekt.value;
+    const belop = inntektBelop.value;
+    const nyInntekt = document.createElement("li");
 
-     nyInntekt.textContent = navn + " " + belop + "kr"
-     intekter.appendChild(nyInntekt);
+    nyInntekt.textContent = navn + " " + belop + " kr";
+    inntekter.appendChild(nyInntekt);
 });
 
 
