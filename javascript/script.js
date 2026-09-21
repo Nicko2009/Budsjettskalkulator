@@ -7,7 +7,7 @@ const utgiftBelop = document.getElementById("UtgifterBelop");
 const leggTilUtgift = document.getElementById("leggTilUtgift");
 
 const innekter = document.getElementById("inntekter");
-const utgifter = document.getElementById("inntekter");
+const utgifter = document.getElementById("utgifter");
 
 
 const saldo = document.getElementById("saldo");
@@ -28,3 +28,12 @@ leggTilInntekt.addEventListener("click", function() {
 
 
 
+leggTilUtgift.addEventListener("click", function() {
+    
+    const navn = utgift.value;
+     const belop = utgiftBelop.value;
+     const nyUtgifter = document.createElement("li");
+
+     nyUtgifter.textContent = navn + " " + belop + "kr"
+     utgifter.appendChild(nyUtgifter);
+});
