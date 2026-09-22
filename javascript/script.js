@@ -38,12 +38,12 @@ leggTilUtgift.addEventListener("click", function() {
     utgifter.appendChild(nyUtgifter);
 
     totalUtgifter += belop;
-    sumUtgifter.textContent = "sum utgifter" + totalUtgifter + "kr"
+    sumUtgifter.textContent = "sum utgifter " + totalUtgifter + "kr"
     oppdaterSaldo();
 });
 function oppdaterSaldo() {
-    const saldo = totalInntekter - totalUtgifter;
+    const total = totalInntekter - totalUtgifter;
+    
     saldo.textContent = total + "kr "
-
 }
 
