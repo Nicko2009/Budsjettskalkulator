@@ -41,5 +41,9 @@ leggTilUtgift.addEventListener("click", function() {
     sumUtgifter.textContent = "sum utgifter" + totalUtgifter + "kr"
     oppdaterSaldo();
 });
+function oppdaterSaldo() {
+    const saldo = totalInntekter - totalUtgifter;
+    saldo.textContent = total + "kr "
 
+}
 
