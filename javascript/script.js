@@ -1,3 +1,5 @@
+let totalInntekter = Number(localStorage.getItem("totalInntekter")) || 0;
+let totalUtgifter = Number(localStorage.getItem("totalUtgifter")) || 0;
 
 const inntekt = document.getElementById("inntekt");
 const inntektBelop = document.getElementById("IntekterBelop");
@@ -14,9 +16,7 @@ const saldo = document.getElementById("saldo");
 const sumInntekter = document.getElementById("sumInntekter")
 const sumUtgifter = document.getElementById("sumUtgifter")
 
-let totalInntekter = 0;
-let totalUtgifter = 0;
-let totalSaldo = 0;                             
+                           
 
 leggTilInntekt.addEventListener("click", function() {
     const navn = inntekt.value;
@@ -26,6 +26,7 @@ leggTilInntekt.addEventListener("click", function() {
     inntekter.appendChild(nyInntekt);
 
     totalInntekter += belop 
+    localStorage.setItem("totalInntekter", totalInntekter)
     sumInntekter.textContent = "sum inntekter " + totalInntekter + "kr"
     oppdaterSaldo();
 });
@@ -38,6 +39,7 @@ leggTilUtgift.addEventListener("click", function() {
     utgifter.appendChild(nyUtgifter);
 
     totalUtgifter += belop;
+    localStorage.setItem("totalUtgifter", totalUtgifter)
     sumUtgifter.textContent = "sum utgifter " + totalUtgifter + "kr"
     oppdaterSaldo();
 });
@@ -50,6 +52,7 @@ function oppdaterSaldo() {
         saldo.style.color = "green";
     }
 }   
+
 
 function fjernInntekter() {
     inntekter.innerHTML = "";
