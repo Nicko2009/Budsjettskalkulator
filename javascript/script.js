@@ -22,25 +22,24 @@ leggTilInntekt.addEventListener("click", function() {
     const navn = inntekt.value;
     const belop = Number(inntektBelop.value);
     const nyInntekt = document.createElement("li");
-
     nyInntekt.textContent = navn + " " + belop + " kr";
     inntekter.appendChild(nyInntekt);
+
     totalInntekter += belop 
-    sumInntekter.textContent = "sum inntekter" + totalInntekter + "kr"
+    sumInntekter.textContent = "sum inntekter " + totalInntekter + "kr"
+    oppdaterSaldo();
 });
 
 leggTilUtgift.addEventListener("click", function() {
-    
     const navn = utgift.value;
-     const belop = Number(utgiftBelop.value);
-     const nyUtgifter = document.createElement("li");
+    const belop = Number(utgiftBelop.value);
+    const nyUtgifter = document.createElement("li");
+    nyUtgifter.textContent = navn + "   - " + belop + "kr"
+    utgifter.appendChild(nyUtgifter);
 
-     nyUtgifter.textContent = navn + " " + belop + "kr"
-     utgifter.appendChild(nyUtgifter);
     totalUtgifter += belop;
-        sumUtgifter.textContent = "sum utgifter" + totalUtgifter + "kr"
-
+    sumUtgifter.textContent = "sum utgifter" + totalUtgifter + "kr"
+    oppdaterSaldo();
 });
-
 
 
