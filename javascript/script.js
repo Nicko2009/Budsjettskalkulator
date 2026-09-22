@@ -51,3 +51,15 @@ function oppdaterSaldo() {
     }
 }   
 
+function fjernInntekter() {
+    inntekter.innerHTML = "";
+    totalInntekter = 0
+    sumInntekter.textContent = "sum inntekter 0 kr"
+    oppdaterSaldo();
+}
+function fjernUtgifter() {
+    utgifter.innerHTML = "";
+    totalUtgifter = 0
+    sumInntekter.textContent = "sum utgifter 0 kr"
+    oppdaterSaldo();
+}
