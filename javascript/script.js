@@ -43,7 +43,11 @@ leggTilUtgift.addEventListener("click", function() {
 });
 function oppdaterSaldo() {
     const total = totalInntekter - totalUtgifter;
-    
     saldo.textContent = total + "kr "
-}
+    if (total < 0){
+        saldo.style.color = "red";
+    } else {
+        saldo.style.color = "green";
+    }
+}   
 
