@@ -1,6 +1,3 @@
-let totalInntekter = Number(localStorage.getItem("totalInntekter")) || 0;
-let totalUtgifter = Number(localStorage.getItem("totalUtgifter")) || 0;
-
 const inntekt = document.getElementById("inntekt");
 const inntektBelop = document.getElementById("IntekterBelop");
 const leggTilInntekt = document.getElementById("leggTilInntekt");
@@ -16,7 +13,8 @@ const saldo = document.getElementById("saldo");
 const sumInntekter = document.getElementById("sumInntekter")
 const sumUtgifter = document.getElementById("sumUtgifter")
 
-                           
+let totalInntekter = JSON.parse(localStorage.getItem("totalInntekter")) || 0;
+let totalUtgifter = JSON.parse(localStorage.getItem("totalUtgifter")) || 0;
 
 leggTilInntekt.addEventListener("click", function() {
     const navn = inntekt.value;
@@ -26,7 +24,8 @@ leggTilInntekt.addEventListener("click", function() {
     inntekter.appendChild(nyInntekt);
 
     totalInntekter += belop 
-    localStorage.setItem("totalInntekter", totalInntekter)
+    localStorage.setItem("totalInntekter",JSON.stringify(totalInntekter))
+
     sumInntekter.textContent = "sum inntekter " + totalInntekter + "kr"
     oppdaterSaldo();
 });
@@ -39,7 +38,7 @@ leggTilUtgift.addEventListener("click", function() {
     utgifter.appendChild(nyUtgifter);
 
     totalUtgifter += belop;
-    localStorage.setItem("totalUtgifter", totalUtgifter)
+    localStorage.setItem("totalUtgifter", JSON.stringify(totalUtgifter))
     sumUtgifter.textContent = "sum utgifter " + totalUtgifter + "kr"
     oppdaterSaldo();
 });
@@ -53,16 +52,23 @@ function oppdaterSaldo() {
     }
 }   
 
-
 function fjernInntekter() {
     inntekter.innerHTML = "";
     totalInntekter = 0
+
+    localStorage.setItem("totalInntekter", JSON.stringify(totalInntekter));
+
     sumInntekter.textContent = "sum inntekter 0 kr"
     oppdaterSaldo();
 }
 function fjernUtgifter() {
     utgifter.innerHTML = "";
     totalUtgifter = 0
-    sumInntekter.textContent = "sum utgifter 0 kr"
+
+    localStorage.setItem("totalUtgifter", JSON.stringify(totalUtgifter));
+
+
+    sumUtgifter.textContent = "sum utgifter 0 kr"
     oppdaterSaldo();
 }
+
