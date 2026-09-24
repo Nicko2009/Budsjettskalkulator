@@ -1,0 +1,53 @@
+
+body {
+    background-color: #f9fafb;
+    padding: 20px;
+    color: #000000;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+input {
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #030303;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+}
+
+li {
+    padding: 15px;
+    margin: 5px;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+#saldo {
+    font-size: 28px;
+    
+}
