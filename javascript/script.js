@@ -4,7 +4,6 @@ let utgifterData = JSON.parse(localStorage.getItem("utgifter")) || [];
 let totalInntekter = Number(localStorage.getItem("totalInntekter")) || 0;
 let totalUtgifter = Number(localStorage.getItem("totalUtgifter")) || 0;
 
-
 const inntekt = document.getElementById("inntekt");
 const inntektBelop = document.getElementById("IntekterBelop");
 const leggTilInntekt = document.getElementById("leggTilInntekt");
